@@ -16,7 +16,7 @@ $(function () {
     var message = $('#js-message').val();
     console.log(email, password, message);
     firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) {
-      firebase.database().ref('messages').push({ email: email, password: password, message: message
+      firebase.database().ref('messages').push({ email: email, message: message
       });
     }).catch(function (error) {
       console.log(error);
